@@ -1,0 +1,6 @@
+{
+  "name": "IQS Fun Board Games",
+  "description": "An interactive, gamified educational platform by IQS Pro featuring class-specific educational board games, rewards, spin wheel, leaderboard, and student/admin dashboards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+      // Safe guard window.fetch to allow overriding/monkeypatching
+      try {
+        const originalFetch = window.fetch;
+        if (originalFetch) {
+          let customFetch = originalFetch;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get() {
+              return customFetch;
+            },
+            set(val) {
+              customFetch = val;
+            }
+          });
+        }
+      } catch (e) {
+        console.warn("Safe patch for window.fetch failed:", e);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
